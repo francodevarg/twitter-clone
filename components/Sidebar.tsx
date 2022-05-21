@@ -8,12 +8,13 @@ import {
     UserIcon,
     HomeIcon
 } from '@heroicons/react/outline';
+import Image from 'next/image';
 import SidebarRow from './SidebarRow';
 
 
 function Sidebar(){
     return <div>
-        <img className='h-10 w-10' src='https://links.papareact.com/drg' alt=''/>
+        <Image width={'40px'} height={'40px'} src='https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg' alt='' />        
         <SidebarRow Icon={HomeIcon} title="Home"/>
         <SidebarRow Icon={HashtagIcon} title="Explore"/>
         <SidebarRow Icon={BellIcon} title="Notifications"/>
