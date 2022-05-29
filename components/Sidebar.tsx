@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HomeIcon } from "@heroicons/react/solid";
+// import { HomeIcon } from "@heroicons/react/solid";
 import {
   HashtagIcon,
   BellIcon,
@@ -9,6 +9,7 @@ import {
   UserIcon,
   DotsCircleHorizontalIcon,
   DotsHorizontalIcon,
+  HomeIcon
 } from "@heroicons/react/outline";
 import SidebarRow from "./SidebarRow";
 
@@ -38,15 +39,15 @@ function Sidebar() {
       <div
         className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverAnimation xl:ml-auto xl:-mr-5"
       >
-        {/* <img
-          src={session.user.image}
-          alt=""
-          className="h-10 w-10 rounded-full xl:mr-2.5"
+            <Image src={'https://yt3.ggpht.com/yti/APfAmoFEvwA525FagnnvCJ7dcCmwp2P1AOLWo9yBCzgVzO8=s88-c-k-c0x00ffffff-no-rj-mo'} 
+                width={'40px'}
+                height={'40px'}
+                className="rounded-full xl:mr-2.5"
         />
         <div className="hidden xl:inline leading-5">
-          <h4 className="font-bold">{session.user.name}</h4>
-          <p className="text-[#6e767d]">@{session.user.tag}</p>
-        </div> */}
+          <h4 className="font-bold">Franco</h4>
+          <p className="text-[#6e767d]">@francodev25</p>
+        </div>
         <DotsHorizontalIcon className="h-5 hidden xl:inline ml-10" />
       </div>
     </div>
