@@ -13,7 +13,7 @@ const Home = ({ trendingResults, followResults }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='mx-32'>
+      <main className=' min-h-screen flex max-w-[1500px] mx-32'>
         <Sidebar/>
         <Feed/>
         {/** Feed */}
