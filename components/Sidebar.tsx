@@ -45,7 +45,7 @@ function Sidebar() {
                 className="rounded-full xl:mr-2.5"
         />
         <div className="hidden xl:inline leading-5">
-          <h4 className="font-bold">Franco</h4>
+          <h4 className="font-bold text-gray-700">Franco</h4>
           <p className="text-[#6e767d]">@francodev25</p>
         </div>
         <DotsHorizontalIcon className="h-5 hidden xl:inline ml-10" />
