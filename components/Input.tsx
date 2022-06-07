@@ -1,14 +1,15 @@
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, PhotographIcon , XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
-import { useRef, useState } from "react";
-import { Picker } from "emoji-mart";
-// import "emoji-mart/css/emoji-mart.css";
+import { useEffect, useRef, useState } from "react";
+import { Picker } from 'emoji-mart'
+import "emoji-mart/css/emoji-mart.css";
 
 function Input(){
 
     const [input,setInput] = useState("");
     const [selectedFile, setSelectedFile] = useState(null);
     const filePickerRef = useRef(null);
+    const [showEmojis, setShowEmojis] = useState(false);
 
     const addImageToPost = (e) => {
         const reader = new FileReader();
@@ -19,6 +20,14 @@ function Input(){
         // reader.onload = (readerEvent) => {
         //   setSelectedFile(readerEvent.target.result);
         // };
+      };
+    
+      const addEmoji = (e) => {
+        // let sym = e.unified.split("-");
+        // // let codesArray = [];
+        // // sym.forEach((el) => codesArray.push("0x" + el));
+        // // let emoji = String.fromCodePoint(...codesArray);
+        // setInput(input + emoji);
       };
     
 
@@ -69,26 +78,27 @@ function Input(){
                     <div className="icon" 
                     // onClick={() => setShowEmojis(!showEmojis)}
                     >
-                        <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" />
+                        <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" onClick={() => setShowEmojis(!showEmojis)} />
                     </div>
 
                     <div className="icon">
                         <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
                     </div>
+                    
+                    {showEmojis && (
+                        <Picker
+                        onSelect={addEmoji}
+                        style={{
+                            position: "absolute",
+                            marginTop: "465px",
+                            marginLeft: -40,
+                            maxWidth: "320px",
+                            borderRadius: "20px",
+                        }}
 
-                        {/* {showEmojis && (
-                            <Picker
-                            // onSelect={addEmoji}
-                            style={{
-                                position: "absolute",
-                                marginTop: "465px",
-                                marginLeft: -40,
-                                maxWidth: "320px",
-                                borderRadius: "20px",
-                            }}
-                            theme="dark"
-                            />
-                        )} */}
+                        />
+                    )}
+
                     </div>
                     <button
                     className="bg-[#1d9bf0] text-white rounded-full px-4 py-1.5 font-bold shadow-md hover:bg-[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-default"
