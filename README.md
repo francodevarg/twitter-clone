@@ -2,25 +2,6 @@
 
 This is the frontend project.
 
-
-## Pre Requisites :wrench:
-
-* Node 16
-
-
-# Environment
-## Local Deploy   
-
-1) Set your Node Version (Watch Pre-Requisites)
-2) In your console run the following command:
-```bash
-    npm install
-```
-3) Config your firebase project and get the variables related. (Check the const firebaseConfig from firebase.js)
-4) Add the data project to .env.example variables.
-5) Copy .env.example into .env.local
-
----
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
