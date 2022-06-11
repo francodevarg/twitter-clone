@@ -6,7 +6,8 @@ import "emoji-mart/css/emoji-mart.css";
 
 function Input(){
 
-    const [input,setInput] = useState("");
+    const [input, setInput] = useState("");
+    const [loading, setLoading] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
     const filePickerRef = useRef(null);
     const [showEmojis, setShowEmojis] = useState(false);
@@ -17,19 +18,18 @@ function Input(){
           reader.readAsDataURL(e.target.files[0]);
         }
     
-        // reader.onload = (readerEvent) => {
-        //   setSelectedFile(readerEvent.target.result);
-        // };
+        reader.onload = (readerEvent) => {
+          setSelectedFile(readerEvent.target.result);
+        };
       };
-    
+
       const addEmoji = (e) => {
-        // let sym = e.unified.split("-");
-        // // let codesArray = [];
-        // // sym.forEach((el) => codesArray.push("0x" + el));
-        // // let emoji = String.fromCodePoint(...codesArray);
-        // setInput(input + emoji);
+        let sym = e.unified.split("-");
+        let codesArray = [];
+        sym.forEach((el) => codesArray.push("0x" + el));
+        let emoji = String.fromCodePoint(...codesArray);
+        setInput(input + emoji);
       };
-    
 
     return (
         <div
