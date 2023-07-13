@@ -52,13 +52,13 @@ import {
       [db, id]
     );
   
-    useEffect(
-      () =>
-        setLiked(
-          likes.findIndex((like) => like.id === session?.user?.uid) !== -1
-        ),
-      [likes]
-    );
+    // useEffect(
+    //   () =>
+    //     setLiked(
+    //       likes.findIndex((like) => like.id === session?.user?.uid) !== -1
+    //     ),
+    //   [likes]
+    // );
   
     // const likePost = async () => {
     //   if (liked) {
