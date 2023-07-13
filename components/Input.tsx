@@ -90,7 +90,7 @@ function Input() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="What's happening?"
-            rows="2"
+            rows={2}
             className="bg-transparent outline-none text-[#000] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px]"
           />
 
