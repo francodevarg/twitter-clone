@@ -49,7 +49,7 @@ function Feed() {
       <Input />
       <div className="pb-[1300px]">
         {posts.map((post: any) => (
-          <Post key={post.id} id={post.id} post={post.data()} />
+          <Post key={post.id} id={post.id} post={post.data()} postPage={post.postPage} />
         ))}
       </div>
     </div>
