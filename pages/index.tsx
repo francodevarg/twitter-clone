@@ -4,8 +4,10 @@ import Image from 'next/image'
 import Feed from '../components/Feed'
 import Widgets from '../components/Widgets'
 import Sidebar from '../components/Sidebar'
+import {trendingResults} from '../constants'
+import {followResults} from '../constants'
 
-const Home = ({ trendingResults, followResults }) => {
+const Home = ( ) => {
   return (
     <div className="">
       <Head>
@@ -25,21 +27,7 @@ const Home = ({ trendingResults, followResults }) => {
     </div>
   )
 }
-export async function getServerSideProps() {
-  const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
-    (res) => res.json()
-  );
-  const followResults = await fetch("https://jsonkeeper.com/b/WWMJ").then(
-    (res) => res.json()
-  );
 
-  return {
-    props: {
-      trendingResults,
-      followResults,
-    },
-  };
-}
 
 export default Home
 
